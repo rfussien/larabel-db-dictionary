@@ -29,6 +29,16 @@ class GenerateDictionary extends Command
             ['data' => $columns->OfTheDefaultDatabase()->get()->toJson()]
         )->render();
 
-        $filesystem->put(public_path('db-dictionary/index.html'), $view);
+        if (!$filesystem->exists(public_path('docs'))) {
+            $filesystem->makeDirectory(public_path('docs'));
+        }
+
+        $filesystem->put(public_path('docs/db-dictionary.html'), $view);
+
+        $this->info(
+            "The documentation has been generated.\n" .
+            "-------------------------------------------------\n" .
+            "Access URL: " . url('docs/db-dictionary.html')
+        );
     }
 }
