@@ -1,0 +1,55 @@
+{
+    "name": "rfussien/laravel-db-dictionary",
+    "type": "library",
+    "description": "Laravel package to generate a DB dictionary supporting MySql",
+    "keywords": [
+        "rfussien",
+        "laravel-db-dictionary"
+    ],
+    "homepage": "https://github.com/rfussien/laravel-db-dictionary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Remi FUSSIEN",
+            "email": "remi.fussien@gmail.com",
+            "homepage": "https://github.com/rfussien",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "~5.6|~7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": ">=5.4.3",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rfussien\\DbDictionary\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rfussien\\DbDictionary\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Rfussien\\DbDictionary\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
